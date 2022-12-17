@@ -14,7 +14,7 @@ import java.lang.reflect.Field;
 
 public class sqlitecursor extends CordovaPlugin {
 
-  private void set(final JSONArray data, final CallbackContext callbackContext) {
+  private void setSize(final JSONArray data, final CallbackContext callbackContext) {
 
     if (data == null || data.length() == 0) {
       callbackContext.error("bad request (parameter)");
@@ -39,11 +39,11 @@ public class sqlitecursor extends CordovaPlugin {
   @Override
   public boolean execute(final String action, final JSONArray data, final CallbackContext callbackContext) {
 
-    if (action.equals("set")) {
+    if (action.equals("setSize")) {
 
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
-          set(data, callbackContext);
+          setSize(data, callbackContext);
         }
       });
 

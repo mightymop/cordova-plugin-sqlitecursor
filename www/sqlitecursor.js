@@ -3,8 +3,8 @@ var PLUGIN_NAME = 'sqlitecursor';
 
 var sqlitecursor = {
 
-	set : function (val, success, error ) {
-		exec(success, error, PLUGIN_NAME, 'set', val);
+	setSize : function (val, success, error ) {
+		exec(success, error, PLUGIN_NAME, 'setSize', [val]);
 	}
 };
 
