@@ -23,12 +23,12 @@ public class sqlitecursor extends CordovaPlugin {
 
 
     try {
-      JSONObject obj = data.optJSONObject(0);
+      int size = Integer.parseInt(data.get(0).toString());
 
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
         Field field = CursorWindow.class.getDeclaredField("sCursorWindowSize");
         field.setAccessible(true);
-        field.set(null, 100 * 1024 * 1024);
+        field.set(null, size * 1024 * 1024);
       }
     } catch (Exception e) {
       Log.e("cordova-plugin-sqlitecursor", e.getMessage());
