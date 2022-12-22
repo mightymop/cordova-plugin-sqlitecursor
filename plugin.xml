@@ -16,7 +16,6 @@
   </js-module>
 
   <platform name="android">
-	<framework src="org.minidns:minidns-hla:1.0.4" />
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="sqlitecursor">
         <param name="android-package" value="de.mopsdom.sqlitecursor.sqlitecursor"/>
